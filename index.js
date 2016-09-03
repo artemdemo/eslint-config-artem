@@ -97,6 +97,9 @@ module.exports = {
         // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
         "import/no-extraneous-dependencies": 0,
         // Requiring of images and styles
-        "import/no-unresolved": 0
+        "import/no-unresolved": 0,
+        // I don't like default export to be mandatory by defaut
+        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
+        "import/prefer-default-export": 0
     }
 }
