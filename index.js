@@ -92,6 +92,8 @@ module.exports = {
         // Warning if there is empty block
         "no-empty": ["warn"],
         "no-prototype-builtins": 0,
+        // I don't feel like disallowing `++` is what will "save the day"
+        "no-plusplus": 0,
 
         /*---# PLUGINS ---*/
 
