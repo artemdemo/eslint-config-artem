@@ -78,8 +78,8 @@ module.exports = {
         "operator-linebreak": ["error", "after"],
         // You have 2 optionsl names for context variables: "that", "self"
         "consistent-this": ["error", "that", "self"],
-        // Не проверяем на первую заглавную букву на свойствах объектов
-        // иначе использование $.Deferred(); будет считаться ошибкой
+        // We are not checking for first capital letter on object properties
+        // Otherwise $.Deferred(); will be an error
         "new-cap": ["error", {
             "properties": false
         }],
@@ -104,6 +104,6 @@ module.exports = {
         "import/no-unresolved": 0,
         // I don't like default export to be mandatory by defaut
         // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
-        "import/prefer-default-export": 0
+        "import/prefer-default-export": "warn"
     }
 }
