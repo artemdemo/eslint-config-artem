@@ -94,6 +94,66 @@ module.exports = {
         "no-prototype-builtins": 0,
         // I don't feel like disallowing `++` is what will "save the day"
         "no-plusplus": 0,
+        // In generators we may use infinite loops like `while(true) {}`
+        "no-constant-condition": 0,
+        // Some methods of react components can be used without `this`
+        // For example:
+        // * I just want to manipulate values that they use.
+        // * Method is rendering part of DOM of the component
+        // * render() returning `null` in case I don't want component to have visual part (Controllers)
+        "class-methods-use-this": 0,
+        // Dangle comma in functions cause error in some versions of node.js
+        "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "ignore"
+        }],
+        // Usage of `Math.pow` will not emit error (** operator is not available in es6)
+        "no-restricted-properties": [
+            "warn",
+        ],
+        // We're allowing multiple spaces before comments.
+        // This way you can align comment in one column
+        // For example:
+        // const foo = 1;          // explanation
+        // const someLongName = 2; // some additional explanation
+        "no-multi-spaces": [
+            "error",
+            {
+                "ignoreEOLComments": true
+            }
+        ],
+        // Arguments could be passed to the function in multiple lines.
+        // For example:
+        // foo(
+        //    bar,
+        //    baz,
+        //    qux
+        // );
+        "function-paren-newline": ["error", "consistent"],
+        // Some global variables should be restricted
+        // Global variable "event" should not be used
+        // "fdescribe" is part of testing framework
+        // "fit" is part of testing framework as well
+        "no-restricted-globals": [
+            "error",
+            {
+                "name": "event",
+                "message": "Use local parameter instead."
+            },
+            {
+                "name": "fdescribe",
+                "message": "Do not commit 'fdescribe'. Use describe instead."
+            },
+            {
+                "name": "fit",
+                "message": "Do not commit 'fit'. Use describe instead."
+            }
+        ],
+        // Objects can be created in one line
+        "object-curly-newline": ["error", { "consistent": true }],
 
         /*---# PLUGINS ---*/
 
@@ -106,4 +166,4 @@ module.exports = {
         // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
         "import/prefer-default-export": "warn"
     }
-}
+};
